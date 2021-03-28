@@ -75,7 +75,7 @@ With some other types that aim to cover common services:
 
 ### Full List of types
 
-### Basic types
+#### Basic types
 
 Type | Description
 --- | ---
@@ -224,7 +224,7 @@ Type | Description
 **ServiceNormalized** | Normalized Service - note: normalizing services is not recommend
 
 
-### Partial / Abstract types
+#### Partial / Abstract types
 These types are building blocks of other types.
 
 Type | Description
