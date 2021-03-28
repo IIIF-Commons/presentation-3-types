@@ -1,0 +1,27 @@
+{
+  "name": "@iiif/presentation-3",
+  "description": "IIIF Presentation v3.0 typescript types",
+  "version": "1.0.0",
+  "source": "index.js",
+  "types": "index.d.ts",
+  "author": "Stephen Fraser <stephen.fraser@digirati.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@types/geojson": "^7946.0.7"
+  },
+  "files": [
+    "iiif",
+    "resources",
+    "services",
+    "index.d.ts",
+    "index.js",
+    "reference.d.ts",
+    "utility.d.ts"
+  ],
+  "devDependencies": {
+    "tslib": "^2.0.0"
+  }
+}
