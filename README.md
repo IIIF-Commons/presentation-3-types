@@ -48,7 +48,7 @@ function doSomethingWithManifest(manifest) {
 const manifest2 = {};
 ```
 
-This will enable types completions in VSCode and IDEA, along with inline documentation from the IIIF speficiation:
+This will enable types completions in VSCode and IDEA, along with inline documentation from the IIIF specification:
 <img width="713" alt="Screenshot 2021-03-28 at 17 11 14" src="https://user-images.githubusercontent.com/8266711/112759081-4b651600-8fe9-11eb-83c6-9739d557716d.png" />
 
 ### Support
