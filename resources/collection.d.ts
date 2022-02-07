@@ -33,4 +33,6 @@ export declare type CollectionNormalized = OmitProperties<TechnicalProperties, C
     StructuralNormalized<Reference<CollectionItemSchemas>, CollectionItemSchemas>,
     CollectionOmittedStructural
   > &
-  OmitProperties<LinkingNormalized, CollectionOmittedLinking> & { type: 'Collection' };
+  OmitProperties<LinkingNormalized, CollectionOmittedLinking> & {
+    type: 'Collection';
+  };

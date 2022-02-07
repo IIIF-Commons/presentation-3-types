@@ -29,4 +29,6 @@ type ManifestItemSchemas = 'Canvas';
 export declare type ManifestNormalized = OmitProperties<TechnicalProperties, ManifestOmittedTechnical> &
   OmitProperties<DescriptiveNormalized, ManifestOmittedDescriptive> &
   StructuralNormalized<Reference<ManifestItemSchemas>, ManifestItemSchemas> &
-  OmitProperties<LinkingNormalized, ManifestOmittedLinking> & { type: 'Manifest' };
+  OmitProperties<LinkingNormalized, ManifestOmittedLinking> & {
+    type: 'Manifest';
+  };

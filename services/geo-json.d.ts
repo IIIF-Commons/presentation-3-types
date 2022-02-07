@@ -7,5 +7,6 @@ export declare type GeoJsonService = {
     }
   | {
       id: string;
-    }) &
+    }
+) &
   Partial<import('geojson').GeoJSON>;

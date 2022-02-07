@@ -57,4 +57,6 @@ export declare type AnnotationPageNormalized = OmitProperties<TechnicalPropertie
     StructuralNormalized<Reference<AnnotationPageItemSchemas>, AnnotationPageItemSchemas>,
     AnnotationPageOmittedStructural
   > &
-  OmitProperties<LinkingNormalized, AnnotationPageOmittedLinking> & { type: 'AnnotationPage' };
+  OmitProperties<LinkingNormalized, AnnotationPageOmittedLinking> & {
+    type: 'AnnotationPage';
+  };

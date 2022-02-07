@@ -7,7 +7,6 @@
  */
 const manifest = {};
 
-
 /**
  * @param manifest {Manifest}
  */
