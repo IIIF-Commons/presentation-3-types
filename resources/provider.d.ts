@@ -6,7 +6,7 @@ export declare type ResourceProvider = {
   id: string;
   type: 'Agent';
   label: InternationalString;
-  homepage?: ContentResource;
+  homepage?: ContentResource[];
   logo?: ContentResource[];
   seeAlso?: ContentResource[];
 };
