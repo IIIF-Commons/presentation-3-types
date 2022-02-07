@@ -188,7 +188,7 @@ export declare type DescriptiveNormalized = OmitProperties<
   thumbnail: Array<Reference<'ContentResource'>>;
   placeholderCanvas: Reference<'Canvas'> | null;
   accompanyingCanvas: Reference<'Canvas'> | null;
-  provider: Array<ResourceProviderNormalized>;
+  provider: Array<Reference<'Agent'>>;
 
   /**
    * @deprecated since 3.0-beta - use placeholderCanvas or accompanyingCanvas
