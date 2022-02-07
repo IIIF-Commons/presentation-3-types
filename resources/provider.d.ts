@@ -15,7 +15,7 @@ export declare type ResourceProviderNormalized = {
   id: string;
   type: 'Agent';
   label: InternationalString;
-  homepage: Reference<'ContentResource'> | null;
+  homepage: Array<Reference<'ContentResource'>>;
   logo: Array<Reference<'ContentResource'>>;
   seeAlso: Array<Reference<'ContentResource'>>;
 };

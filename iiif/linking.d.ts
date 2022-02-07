@@ -16,7 +16,7 @@ export declare type LinkingProperties = {
    * @deprecated since 3.0-beta - use provider.logo
    */
   logo: ContentResource[];
-  homepage: ContentResource;
+  homepage: ContentResource[];
 };
 
 export declare type LinkingNormalized = {
@@ -31,5 +31,5 @@ export declare type LinkingNormalized = {
    * @deprecated since 3.0-beta - use provider.logo
    */
   logo: Array<Reference<'ContentResource'>>;
-  homepage: Reference<'ContentResource'> | null;
+  homepage: Array<Reference<'ContentResource'>>;
 };
