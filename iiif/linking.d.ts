@@ -10,7 +10,7 @@ export declare type LinkingProperties = {
   services: Service[];
   rendering: ContentResource[];
   partOf: Array<ContentResource | Canvas | AnnotationCollection>;
-  start: Canvas[];
+  start: Canvas | null;
   supplementary: ContentResource[];
   /**
    * @deprecated since 3.0-beta - use provider.logo
