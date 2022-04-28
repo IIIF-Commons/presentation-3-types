@@ -80,6 +80,9 @@ export interface ImageService3 {
   protocol?: string;
   width?: number | null;
   height?: number | null;
+  maxWidth?: number | null;
+  maxHeight?: number | null;
+  maxArea?: number | null;
   attribution?: string;
   sizes?: ImageSize[];
   tiles?: ImageTile[];
@@ -100,6 +103,9 @@ export interface ImageService {
   protocol?: string;
   width?: number | null;
   height?: number | null;
+  maxWidth?: number | null;
+  maxHeight?: number | null;
+  maxArea?: number | null;
   attribution?: string;
   sizes?: ImageSize[];
   tiles?: ImageTile[];
