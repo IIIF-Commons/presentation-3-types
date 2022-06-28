@@ -399,7 +399,9 @@ export declare type AnnotationW3cNormalised = JsonLDContext &
   Partial<OtherPropertiesNormalized> & {
     body: Array<Reference<'ContentResource'>>;
     bodyValue?: string | null;
-    target: Array<Reference<'ContentResource'>>;
+    // Removed until normalisation is resolved.
+    // target: Array<Reference<'ContentResource'>>;
+    target?: W3CAnnotationTarget | W3CAnnotationTarget[];
     stylesheet?: Stylesheet | null;
   };
 
