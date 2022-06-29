@@ -61,6 +61,7 @@ export declare type ImageProfile =
 export interface ImageService2 {
   '@context'?: string | string[];
   '@id': string;
+  '@type': 'ImageService2';
   profile: ImageProfile | ImageProfile[];
   protocol?: string;
   width?: number | null;
@@ -99,6 +100,7 @@ export interface ImageService {
   '@id'?: string;
   id: string;
   type?: 'ImageService1' | 'ImageService2' | 'ImageService3';
+  '@type'?: 'ImageService1' | 'ImageService2' | 'ImageService3';
   profile: ImageProfile | ImageProfile[];
   protocol?: string;
   width?: number | null;
