@@ -104,7 +104,7 @@ export declare type EmbeddedResource = ResourceBaseProperties & {
   format?: string;
 };
 
-export declare type SpecificResource = ResourceBaseProperties & {
+export declare type SpecificResource<Type = LinkedResource> = ResourceBaseProperties & {
   id?: string;
   type?: 'SpecificResource';
   state?: State | State[];

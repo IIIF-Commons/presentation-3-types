@@ -5,6 +5,7 @@ import { LinkingNormalized, LinkingProperties } from '../iiif/linking';
 import { JsonLDContext, OmitProperties, SomeRequired } from '../utility';
 import { Reference } from '../reference';
 import { Canvas } from './canvas';
+import { SpecificResource } from './annotation';
 
 export declare type ManifestItems = Canvas;
 
@@ -31,4 +32,5 @@ export declare type ManifestNormalized = OmitProperties<TechnicalProperties, Man
   StructuralNormalized<Reference<ManifestItemSchemas>, ManifestItemSchemas> &
   OmitProperties<LinkingNormalized, ManifestOmittedLinking> & {
     type: 'Manifest';
+    start: SpecificResource<Reference<'Canvas'>> | null;
   };
