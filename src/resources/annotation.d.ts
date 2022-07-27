@@ -1,10 +1,17 @@
 import { TechnicalProperties } from '../iiif/technical';
 import { DescriptiveProperties } from '../iiif/descriptive';
 import { LinkingProperties } from '../iiif/linking';
-import { OmitProperties, SomeRequired } from '../utility';
+import { LiteralUnion, OmitProperties, SomeRequired } from '../utility';
 import { ContentResource, ContentResourceString } from './contentResource';
 
-type AnnotationOmittedTechnical = 'format' | 'profile' | 'height' | 'width' | 'duration' | 'viewingDirection';
+type AnnotationOmittedTechnical =
+  | 'format'
+  | 'profile'
+  | 'height'
+  | 'width'
+  | 'duration'
+  | 'viewingDirection'
+  | 'motivation';
 type AnnotationOmittedDescriptive =
   | 'posterCanvas'
   | 'accompanyingCanvas'
@@ -33,7 +40,7 @@ export declare type W3CMotivation =
   | 'replying'
   | 'tagging';
 
-export declare type AnyMotivation = W3CMotivation | string;
+export declare type AnyMotivation = LiteralUnion<W3CMotivation>;
 
 export declare type LinkedResource = string | { id: string } | any;
 

@@ -25,4 +25,4 @@ export interface Canvas
   '@context'?: string | string[];
 }
 
-type CanvasItemSchemas = 'AnnotationPage';
+export declare type CanvasItemSchemas = 'AnnotationPage';

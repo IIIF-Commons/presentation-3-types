@@ -1,3 +1,5 @@
+import { LiteralUnion } from '../utility';
+
 export declare type ResourceType =
   | 'Collection'
   | 'Manifest'
@@ -58,7 +60,7 @@ export declare type TechnicalProperties = {
    *  * All resource types _MUST_ have the `type` property.
    *  * Clients _MUST_ process, and _MAY_ render, `type` on any resource type.
    */
-  type: ResourceType;
+  type: LiteralUnion<ResourceType>;
 
   /**
    * The specific media type (often called a MIME type) for a content resource, for example `image/jpeg`. This is important for distinguishing different formats of the same overall type of resource, such as distinguishing text in XML from plain text.
@@ -189,7 +191,7 @@ export declare type TechnicalProperties = {
    *  | | **Miscellaneous Behaviors** |
    *  | `hidden` | Valid on Annotation Collections, Annotation Pages, Annotations, Specific Resources and Choices. If this behavior is provided, then the client _SHOULD NOT_ render the resource by default, but allow the user to turn it on and off. This behavior does not inherit, as it is not valid on Collections, Manifests, Ranges or Canvases. |
    */
-  behavior: SpecificationBehaviors[] | string[];
+  behavior: Array<LiteralUnion<SpecificationBehaviors>>;
 
   /**
    *  A mode associated with an Annotation that is to be applied to the rendering of any time-based media, or otherwise could be considered to have a duration, used as a body resource of that Annotation. Note that the association of `timeMode` with the Annotation means that different resources in the body cannot have different values. This specification defines the values specified in the table below. Others may be defined externally as an [extension][prezi30-ldce].

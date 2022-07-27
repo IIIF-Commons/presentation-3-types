@@ -10,3 +10,5 @@ export declare type JsonLDContext = {
 };
 
 export declare type IdOrAtId<T> = { id: T } | { '@id': T };
+
+export declare type LiteralUnion<T extends string> = T | Omit<string, T>;
