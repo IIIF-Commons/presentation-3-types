@@ -7,7 +7,7 @@ import { JsonLDContext, OmitProperties, SomeRequired } from '../utility';
 
 export declare type CollectionItems = Collection | Manifest;
 
-type CollectionOmittedTechnical = 'format' | 'profile' | 'height' | 'width' | 'duration' | 'timeMode';
+type CollectionOmittedTechnical = 'format' | 'profile' | 'height' | 'width' | 'duration' | 'timeMode' | 'motivation';
 type CollectionOmittedDescriptive = 'language';
 type CollectionOmittedStructural = 'structures';
 type CollectionOmittedLinking = 'start' | 'supplementary';

@@ -7,7 +7,7 @@ import { AnnotationPage } from './annotationPage';
 
 export declare type CanvasItems = AnnotationPage;
 
-type CanvasOmittedTechnical = 'format' | 'profile' | 'viewingDirection' | 'timeMode';
+type CanvasOmittedTechnical = 'format' | 'profile' | 'viewingDirection' | 'timeMode' | 'motivation';
 type CanvasOmittedDescriptive = 'language';
 type CanvasOmittedLinking = 'services' | 'start' | 'supplementary';
 type CanvasOmittedStructural = 'structures';

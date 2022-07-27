@@ -8,7 +8,7 @@ import { Canvas } from './canvas';
 
 export declare type ManifestItems = Canvas;
 
-type ManifestOmittedTechnical = 'format' | 'profile' | 'height' | 'width' | 'duration' | 'timeMode';
+type ManifestOmittedTechnical = 'format' | 'profile' | 'height' | 'width' | 'duration' | 'timeMode' | 'motivation';
 type ManifestOmittedDescriptive = 'language';
 type ManifestOmittedLinking = 'supplementary';
 

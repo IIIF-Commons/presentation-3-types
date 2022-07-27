@@ -9,7 +9,7 @@ import { SpecificResource } from './annotation';
 
 export declare type RangeItems = Range | Canvas | string | SpecificResource<Reference<'Canvas'>>;
 
-type RangeOmittedTechnical = 'format' | 'profile' | 'height' | 'width' | 'duration' | 'timeMode';
+type RangeOmittedTechnical = 'format' | 'profile' | 'height' | 'width' | 'duration' | 'timeMode' | 'motivation';
 type RangeOmittedDescriptive = 'language';
 type RangeOmittedStructural = 'structures';
 type RangeOmittedLinking = 'services';

@@ -4,14 +4,7 @@ import { LinkingProperties } from '../iiif/linking';
 import { OmitProperties, SomeRequired } from '../utility';
 import { ContentResource, ContentResourceString } from './contentResource';
 
-type AnnotationOmittedTechnical =
-  | 'format'
-  | 'profile'
-  | 'height'
-  | 'width'
-  | 'duration'
-  | 'viewingDirection'
-  | 'motivation';
+type AnnotationOmittedTechnical = 'format' | 'profile' | 'height' | 'width' | 'duration' | 'viewingDirection';
 type AnnotationOmittedDescriptive =
   | 'posterCanvas'
   | 'accompanyingCanvas'

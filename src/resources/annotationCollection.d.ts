@@ -14,7 +14,8 @@ type AnnotationCollectionOmittedTechnical =
   | 'width'
   | 'duration'
   | 'viewingDirection'
-  | 'timeMode';
+  | 'timeMode'
+  | 'motivation';
 type AnnotationCollectionOmittedDescriptive =
   | 'posterCanvas'
   | 'accompanyingCanvas'
