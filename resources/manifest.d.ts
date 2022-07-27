@@ -31,5 +31,4 @@ export declare type ManifestNormalized = OmitProperties<TechnicalProperties, Man
   StructuralNormalized<Reference<ManifestItemSchemas>, ManifestItemSchemas> &
   OmitProperties<LinkingNormalized, ManifestOmittedLinking> & {
     type: 'Manifest';
-    start: Reference<'Canvas'> | null;
   };
