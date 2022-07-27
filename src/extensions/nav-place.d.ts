@@ -3,7 +3,7 @@
  *
  * See: https://iiif.io/api/extension/navplace/
  */
-export interface NavPlaceExtension {
+export declare interface NavPlaceExtension {
   /**
    * Nav place
    *

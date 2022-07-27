@@ -3,6 +3,7 @@ import { DescriptiveProperties } from '../iiif/descriptive';
 import { LinkingProperties } from '../iiif/linking';
 import { LiteralUnion, OmitProperties, SomeRequired } from '../utility';
 import { ContentResource, ContentResourceString } from './contentResource';
+import { TextGranularityExtension } from '../extensions/text-granularity';
 
 type AnnotationOmittedTechnical =
   | 'format'
@@ -373,7 +374,8 @@ export interface Annotation
   extends SomeRequired<AnnotationTechnical, 'id' | 'type'>,
     Partial<AnnotationDescriptive>,
     Partial<AnnotationLinking>,
-    Partial<OmitProperties<AnnotationW3C, 'body' | 'target'>> {
+    Partial<OmitProperties<AnnotationW3C, 'body' | 'target'>>,
+    TextGranularityExtension {
   body?: AnnotationBody | AnnotationBody[];
   target?: AnnotationTarget | AnnotationTarget[];
 }

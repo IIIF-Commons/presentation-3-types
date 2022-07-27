@@ -18,3 +18,4 @@ export * from './src/iiif/technical';
 export * from './src/utility';
 export * from './src/reference';
 export * from './src/extensions/nav-place';
+export * from './src/extensions/text-granularity';
