@@ -87,7 +87,7 @@ export declare type EmbeddedResource = ResourceBaseProperties & {
 
 export declare type SpecificResource<Type = LinkedResource> = ResourceBaseProperties & {
   id?: string;
-  type?: 'SpecificResource';
+  type: 'SpecificResource';
   state?: State | State[];
   purpose?: AnyMotivation | AnyMotivation[];
   source?: Type;
