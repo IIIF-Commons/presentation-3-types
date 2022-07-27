@@ -25,10 +25,11 @@ export interface Range
     Partial<RangeStructural>,
     Partial<RangeLinking> {}
 
+export type NormalisedRangeItems = Array<Reference<'Range'> | Reference<'Canvas'> | SpecificResource<Reference<'Canvas'>>>;
+
 export declare type RangeNormalized = OmitProperties<TechnicalProperties, RangeOmittedTechnical> &
+  OmitProperties<StructuralProperties<NormalisedRangeItems>, RangeOmittedStructural> &
   OmitProperties<DescriptiveNormalized, RangeOmittedDescriptive> &
   OmitProperties<LinkingNormalized, RangeOmittedLinking> & {
     type: 'Range';
-    annotations: Array<Reference<'AnnotationPage'>>;
-    items: Array<Reference<'Range'> | Reference<'Canvas'> | SpecificResource<Reference<'Canvas'>>>;
   };
