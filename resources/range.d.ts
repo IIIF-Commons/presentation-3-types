@@ -7,7 +7,7 @@ import { Reference } from '../reference';
 import { Canvas } from './canvas';
 import { SpecificResource } from './annotation';
 
-export declare type RangeItems = Range | Canvas | string | SpecificResource<Reference<'Canvas'> | Reference<'Range'>>;
+export declare type RangeItems = Range | Canvas | string | SpecificResource<Reference<'Canvas'>>;
 
 type RangeOmittedTechnical = 'format' | 'profile' | 'height' | 'width' | 'duration' | 'timeMode';
 type RangeOmittedDescriptive = 'language';
