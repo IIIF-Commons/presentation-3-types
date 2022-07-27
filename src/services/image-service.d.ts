@@ -1,6 +1,7 @@
 /// <reference types="geojson" />
 
-import { ContentResource, Service } from '..';
+import { ContentResource } from '../resources/contentResource';
+import { Service } from '../resources/service';
 
 export declare type ImageServiceProfile =
   | 'http://library.stanford.edu/iiif/image-api/compliance.html#level0'

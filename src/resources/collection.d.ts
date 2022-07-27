@@ -1,10 +1,9 @@
 import { TechnicalProperties } from '../iiif/technical';
-import { DescriptiveNormalized, DescriptiveProperties } from '../iiif/descriptive';
-import { StructuralNormalized, StructuralProperties } from '../iiif/structural';
-import { LinkingNormalized, LinkingProperties } from '../iiif/linking';
+import { DescriptiveProperties } from '../iiif/descriptive';
+import { StructuralProperties } from '../iiif/structural';
+import { LinkingProperties } from '../iiif/linking';
 import { Manifest } from './manifest';
 import { JsonLDContext, OmitProperties, SomeRequired } from '../utility';
-import { Reference } from '../reference';
 
 export declare type CollectionItems = Collection | Manifest;
 
@@ -26,13 +25,3 @@ export interface Collection
     JsonLDContext {}
 
 export declare type CollectionItemSchemas = 'Collection' | 'Manifest';
-
-export declare type CollectionNormalized = OmitProperties<TechnicalProperties, CollectionOmittedTechnical> &
-  OmitProperties<DescriptiveNormalized, CollectionOmittedDescriptive> &
-  OmitProperties<
-    StructuralNormalized<Reference<CollectionItemSchemas>, CollectionItemSchemas>,
-    CollectionOmittedStructural
-  > &
-  OmitProperties<LinkingNormalized, CollectionOmittedLinking> & {
-    type: 'Collection';
-  };

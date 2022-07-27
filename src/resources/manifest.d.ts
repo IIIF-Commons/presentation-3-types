@@ -1,7 +1,7 @@
 import { TechnicalProperties } from '../iiif/technical';
-import { DescriptiveNormalized, DescriptiveProperties } from '../iiif/descriptive';
-import { StructuralNormalized, StructuralProperties } from '../iiif/structural';
-import { LinkingNormalized, LinkingProperties } from '../iiif/linking';
+import { DescriptiveProperties } from '../iiif/descriptive';
+import { StructuralProperties } from '../iiif/structural';
+import { LinkingProperties } from '../iiif/linking';
 import { JsonLDContext, OmitProperties, SomeRequired } from '../utility';
 import { Reference } from '../reference';
 import { Canvas } from './canvas';
@@ -25,10 +25,3 @@ export interface Manifest
     JsonLDContext {}
 
 type ManifestItemSchemas = 'Canvas';
-
-export declare type ManifestNormalized = OmitProperties<TechnicalProperties, ManifestOmittedTechnical> &
-  OmitProperties<DescriptiveNormalized, ManifestOmittedDescriptive> &
-  StructuralNormalized<Reference<ManifestItemSchemas>, ManifestItemSchemas> &
-  OmitProperties<LinkingNormalized, ManifestOmittedLinking> & {
-    type: 'Manifest';
-  };
