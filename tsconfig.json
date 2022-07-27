@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
     "declaration": true
-  }
+  },
+  "exclude": ["dist/presentation-3.d.ts"]
 }

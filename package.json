@@ -7,7 +7,7 @@
   "author": "Stephen Fraser <stephen.fraser@digirati.com>",
   "license": "MIT",
   "scripts": {
-    "build": "dts-bundle-generator  --external-imports=@types/geojson --out-file=dist/presentation-3.d.ts index.d.ts"
+    "build": "rm -rf dist/ && dts-bundle-generator  --external-imports=@types/geojson --out-file=dist/presentation-3.d.ts index.d.ts"
   },
   "publishConfig": {
     "access": "public"

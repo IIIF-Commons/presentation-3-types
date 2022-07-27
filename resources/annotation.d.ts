@@ -109,7 +109,7 @@ export declare type SpecificResource<Type = LinkedResource> = ResourceBaseProper
   type?: 'SpecificResource';
   state?: State | State[];
   purpose?: AnyMotivation | AnyMotivation[];
-  source?: LinkedResource; // @todo change to specific resource.
+  source?: Type;
   selector?: Selector | Selector[];
   styleClass?: string;
   renderedVia?: Agent | Agent[];
