@@ -22,6 +22,9 @@ export interface Collection
     SomeRequired<CollectionDescriptive, 'label'>,
     SomeRequired<CollectionStructural, 'items'>,
     Partial<CollectionLinking>,
-    JsonLDContext {}
+    JsonLDContext {
+  // Extensions: https://iiif.io/api/extension/
+  navPlace?: import('geojson').GeoJSON;
+}
 
 export declare type CollectionItemSchemas = 'Collection' | 'Manifest';

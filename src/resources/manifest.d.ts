@@ -22,6 +22,9 @@ export interface Manifest
     SomeRequired<ManifestDescriptive, 'label'>,
     SomeRequired<ManifestStructural, 'items'>,
     Partial<ManifestLinking>,
-    JsonLDContext {}
+    JsonLDContext {
+  // Extensions: https://iiif.io/api/extension/
+  navPlace?: import('geojson').GeoJSON;
+}
 
 type ManifestItemSchemas = 'Canvas';

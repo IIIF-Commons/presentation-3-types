@@ -23,4 +23,7 @@ export interface Range
   extends SomeRequired<RangeTechnical, 'id' | 'type'>,
     SomeRequired<RangeDescriptive, 'label'>,
     Partial<RangeStructural>,
-    Partial<RangeLinking> {}
+    Partial<RangeLinking> {
+  // Extensions: https://iiif.io/api/extension/
+  navPlace?: import('geojson').GeoJSON;
+}

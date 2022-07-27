@@ -23,6 +23,8 @@ export interface Canvas
     Partial<CanvasStructural>,
     Partial<CanvasLinking> {
   '@context'?: string | string[];
+  // Extensions: https://iiif.io/api/extension/
+  navPlace?: import('geojson').GeoJSON;
 }
 
 export declare type CanvasItemSchemas = 'AnnotationPage';
