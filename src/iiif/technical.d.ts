@@ -60,7 +60,7 @@ export declare type TechnicalProperties = {
    *  * All resource types _MUST_ have the `type` property.
    *  * Clients _MUST_ process, and _MAY_ render, `type` on any resource type.
    */
-  type: LiteralUnion<ResourceType>;
+  type: ResourceType;
 
   /**
    * The specific media type (often called a MIME type) for a content resource, for example `image/jpeg`. This is important for distinguishing different formats of the same overall type of resource, such as distinguishing text in XML from plain text.
