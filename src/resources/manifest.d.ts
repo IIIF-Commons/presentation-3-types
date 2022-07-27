@@ -5,6 +5,7 @@ import { LinkingProperties } from '../iiif/linking';
 import { JsonLDContext, OmitProperties, SomeRequired } from '../utility';
 import { Reference } from '../reference';
 import { Canvas } from './canvas';
+import { NavPlaceExtension } from '../extensions/nav-place';
 
 export declare type ManifestItems = Canvas;
 
@@ -22,9 +23,7 @@ export interface Manifest
     SomeRequired<ManifestDescriptive, 'label'>,
     SomeRequired<ManifestStructural, 'items'>,
     Partial<ManifestLinking>,
-    JsonLDContext {
-  // Extensions: https://iiif.io/api/extension/
-  navPlace?: import('geojson').GeoJSON;
-}
+    NavPlaceExtension,
+    JsonLDContext {}
 
 type ManifestItemSchemas = 'Canvas';

@@ -6,6 +6,7 @@ import { OmitProperties, SomeRequired } from '../utility';
 import { Reference } from '../reference';
 import { Canvas } from './canvas';
 import { SpecificResource } from './annotation';
+import { NavPlaceExtension } from '../extensions/nav-place';
 
 export declare type RangeItems = Range | Canvas | string | SpecificResource<Reference<'Canvas'>>;
 
@@ -23,7 +24,5 @@ export interface Range
   extends SomeRequired<RangeTechnical, 'id' | 'type'>,
     SomeRequired<RangeDescriptive, 'label'>,
     Partial<RangeStructural>,
-    Partial<RangeLinking> {
-  // Extensions: https://iiif.io/api/extension/
-  navPlace?: import('geojson').GeoJSON;
-}
+    NavPlaceExtension,
+    Partial<RangeLinking> {}

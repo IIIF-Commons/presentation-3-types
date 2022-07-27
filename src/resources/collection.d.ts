@@ -4,6 +4,7 @@ import { StructuralProperties } from '../iiif/structural';
 import { LinkingProperties } from '../iiif/linking';
 import { Manifest } from './manifest';
 import { JsonLDContext, OmitProperties, SomeRequired } from '../utility';
+import { NavPlaceExtension } from '../extensions/nav-place';
 
 export declare type CollectionItems = Collection | Manifest;
 
@@ -22,9 +23,7 @@ export interface Collection
     SomeRequired<CollectionDescriptive, 'label'>,
     SomeRequired<CollectionStructural, 'items'>,
     Partial<CollectionLinking>,
-    JsonLDContext {
-  // Extensions: https://iiif.io/api/extension/
-  navPlace?: import('geojson').GeoJSON;
-}
+    NavPlaceExtension,
+    JsonLDContext {}
 
 export declare type CollectionItemSchemas = 'Collection' | 'Manifest';
