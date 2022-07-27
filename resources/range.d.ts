@@ -1,12 +1,13 @@
 import { TechnicalProperties } from '../iiif/technical';
 import { DescriptiveNormalized, DescriptiveProperties } from '../iiif/descriptive';
-import { StructuralNormalized, StructuralProperties } from '../iiif/structural';
+import { StructuralProperties } from '../iiif/structural';
 import { LinkingNormalized, LinkingProperties } from '../iiif/linking';
 import { OmitProperties, SomeRequired } from '../utility';
 import { Reference } from '../reference';
 import { Canvas } from './canvas';
+import { SpecificResource } from './annotation';
 
-export declare type RangeItems = Range | Canvas | string;
+export declare type RangeItems = Range | Canvas | string | SpecificResource<Reference<'Canvas'>>;
 
 type RangeOmittedTechnical = 'format' | 'profile' | 'height' | 'width' | 'duration' | 'timeMode';
 type RangeOmittedDescriptive = 'language';
@@ -24,9 +25,11 @@ export interface Range
     Partial<RangeStructural>,
     Partial<RangeLinking> {}
 
-type ItemSchemas = 'Range' | 'Canvas';
+export type NormalisedRangeItems = Array<Reference<'Range'> | Reference<'Canvas'> | SpecificResource<Reference<'Canvas'>>>;
 
 export declare type RangeNormalized = OmitProperties<TechnicalProperties, RangeOmittedTechnical> &
+  OmitProperties<StructuralProperties<NormalisedRangeItems>, RangeOmittedStructural> &
   OmitProperties<DescriptiveNormalized, RangeOmittedDescriptive> &
-  OmitProperties<StructuralNormalized<Reference<ItemSchemas>, ItemSchemas>, RangeOmittedStructural> &
-  OmitProperties<LinkingNormalized, RangeOmittedLinking> & { type: 'Range' };
+  OmitProperties<LinkingNormalized, RangeOmittedLinking> & {
+    type: 'Range';
+  };

@@ -3,6 +3,7 @@ import { ContentResource } from '../resources/contentResource';
 import { Service, ServiceNormalized } from '../resources/service';
 import { Canvas } from '../resources/canvas';
 import { AnnotationCollection } from '../resources/annotationCollection';
+import {SpecificResource} from "../resources/annotation";
 
 export declare type LinkingProperties = {
   seeAlso: ContentResource[];
@@ -25,7 +26,7 @@ export declare type LinkingNormalized = {
   services: Array<ServiceNormalized>;
   rendering: Array<Reference<'ContentResource'>>;
   partOf: Array<Reference<'Collection' | 'Manifest'>>;
-  start: Reference<'Canvas' | 'Selector'> | null;
+  start: Reference<'Canvas' | 'Selector'> | SpecificResource<Reference<'Canvas'>> | null;
   supplementary: Reference<'AnnotationCollection'> | null;
   /**
    * @deprecated since 3.0-beta - use provider.logo
