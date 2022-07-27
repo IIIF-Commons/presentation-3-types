@@ -30,5 +30,5 @@ export declare type RangeNormalized = OmitProperties<TechnicalProperties, RangeO
   OmitProperties<LinkingNormalized, RangeOmittedLinking> & {
     type: 'Range';
     annotations: Array<Reference<'AnnotationPage'>>;
-    items: Array<Reference<'Range'> | SpecificResource<Reference<'Canvas'>>>;
+    items: Array<Reference<'Range'> | Reference<'Canvas'> | SpecificResource<Reference<'Canvas'>>>;
   };
