@@ -1,7 +1,7 @@
 {
   "name": "@iiif/presentation-3",
   "description": "IIIF Presentation v3.0 typescript types",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "source": "index.js",
   "types": "dist/presentation-3.d.ts",
   "author": "Stephen Fraser <stephen.fraser@digirati.com>",
