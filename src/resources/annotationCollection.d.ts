@@ -1,8 +1,8 @@
 import { W3CAnnotationPage } from './annotationPage';
 import { OmitProperties, SomeRequired } from '../utility';
 import { TechnicalProperties } from '../iiif/technical';
-import { DescriptiveNormalized, DescriptiveProperties } from '../iiif/descriptive';
-import { LinkingNormalized, LinkingProperties } from '../iiif/linking';
+import { DescriptiveProperties } from '../iiif/descriptive';
+import { LinkingProperties } from '../iiif/linking';
 import { Manifest } from './manifest';
 import { Collection } from './collection';
 
@@ -44,8 +44,3 @@ export interface AnnotationCollection
     OmitProperties<W3CAnnotationCollection, 'label'> {
   partOf: Array<Collection | Manifest | string>;
 }
-
-export interface AnnotationCollectionNormalized
-  extends OmitProperties<TechnicalProperties, AnnotationCollectionOmittedTechnical>,
-    OmitProperties<DescriptiveNormalized, AnnotationCollectionOmittedDescriptive>,
-    OmitProperties<LinkingNormalized, AnnotationCollectionOmittedLinking> {}

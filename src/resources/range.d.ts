@@ -1,7 +1,7 @@
 import { TechnicalProperties } from '../iiif/technical';
-import { DescriptiveNormalized, DescriptiveProperties } from '../iiif/descriptive';
+import { DescriptiveProperties } from '../iiif/descriptive';
 import { StructuralProperties } from '../iiif/structural';
-import { LinkingNormalized, LinkingProperties } from '../iiif/linking';
+import { LinkingProperties } from '../iiif/linking';
 import { OmitProperties, SomeRequired } from '../utility';
 import { Reference } from '../reference';
 import { Canvas } from './canvas';
@@ -24,12 +24,3 @@ export interface Range
     SomeRequired<RangeDescriptive, 'label'>,
     Partial<RangeStructural>,
     Partial<RangeLinking> {}
-
-export type NormalisedRangeItems = Array<Reference<'Range'> | Reference<'Canvas'> | SpecificResource<Reference<'Canvas'>>>;
-
-export declare type RangeNormalized = OmitProperties<TechnicalProperties, RangeOmittedTechnical> &
-  OmitProperties<StructuralProperties<NormalisedRangeItems>, RangeOmittedStructural> &
-  OmitProperties<DescriptiveNormalized, RangeOmittedDescriptive> &
-  OmitProperties<LinkingNormalized, RangeOmittedLinking> & {
-    type: 'Range';
-  };

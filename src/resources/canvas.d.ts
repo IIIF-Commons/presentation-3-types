@@ -1,9 +1,8 @@
 import { TechnicalProperties } from '../iiif/technical';
-import { DescriptiveNormalized, DescriptiveProperties } from '../iiif/descriptive';
-import { StructuralNormalized, StructuralProperties } from '../iiif/structural';
-import { LinkingNormalized, LinkingProperties } from '../iiif/linking';
+import { DescriptiveProperties } from '../iiif/descriptive';
+import { StructuralProperties } from '../iiif/structural';
+import { LinkingProperties } from '../iiif/linking';
 import { OmitProperties, SomeRequired } from '../utility';
-import { Reference } from '../reference';
 import { AnnotationPage } from './annotationPage';
 
 export declare type CanvasItems = AnnotationPage;
@@ -27,8 +26,3 @@ export interface Canvas
 }
 
 type CanvasItemSchemas = 'AnnotationPage';
-
-export declare type CanvasNormalized = OmitProperties<TechnicalProperties, CanvasOmittedTechnical> &
-  OmitProperties<DescriptiveNormalized, CanvasOmittedDescriptive> &
-  OmitProperties<StructuralNormalized<Reference<CanvasItemSchemas>, CanvasItemSchemas>, CanvasOmittedStructural> &
-  OmitProperties<LinkingNormalized, CanvasOmittedLinking> & { type: 'Canvas' };

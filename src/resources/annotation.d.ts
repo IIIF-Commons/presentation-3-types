@@ -1,9 +1,8 @@
 import { TechnicalProperties } from '../iiif/technical';
-import { DescriptiveNormalized, DescriptiveProperties } from '../iiif/descriptive';
-import { LinkingNormalized, LinkingProperties } from '../iiif/linking';
-import { JsonLDContext, OmitProperties, SomeRequired } from '../utility';
+import { DescriptiveProperties } from '../iiif/descriptive';
+import { LinkingProperties } from '../iiif/linking';
+import { OmitProperties, SomeRequired } from '../utility';
 import { ContentResource, ContentResourceString } from './contentResource';
-import { Reference } from '../reference';
 
 type AnnotationOmittedTechnical =
   | 'format'
@@ -61,24 +60,6 @@ export declare type OtherProperties = {
   // Other identities
   canonical?: string;
   via?: string | string[];
-};
-
-export declare type OtherPropertiesNormalized = {
-  // Lifecycle properties.
-  created: string | null;
-  generated: string | null;
-  modified: string | null;
-  creator: CreatorNormalized;
-  generator: CreatorNormalized;
-  // Intended audience
-  audience: Audience[];
-  accessibility: string[];
-  motivation: AnyMotivation[];
-  // Rights
-  rights: string[];
-  // Other identities
-  canonical: string | null;
-  via: string[];
 };
 
 export declare type ResourceBaseProperties = OtherProperties & {
@@ -345,7 +326,6 @@ export declare type ChoiceTarget = {
 };
 
 export declare type Creator = string | string[] | Agent | Agent[];
-export declare type CreatorNormalized = string[] | Agent[];
 
 export declare type W3CAnnotationBody = Body | ChoiceBody;
 export declare type W3CAnnotationTarget = Target | ChoiceTarget | TargetComposite | TargetList | TargetIndependents;
@@ -395,16 +375,6 @@ export declare type AnnotationW3C = OtherProperties & {
   stylesheet?: string | Stylesheet;
 };
 
-export declare type AnnotationW3cNormalised = JsonLDContext &
-  Partial<OtherPropertiesNormalized> & {
-    body: Array<Reference<'ContentResource'>>;
-    bodyValue?: string | null;
-    // Removed until normalisation is resolved.
-    // target: Array<Reference<'ContentResource'>>;
-    target?: W3CAnnotationTarget | W3CAnnotationTarget[];
-    stylesheet?: Stylesheet | null;
-  };
-
 export interface Annotation
   extends SomeRequired<AnnotationTechnical, 'id' | 'type'>,
     Partial<AnnotationDescriptive>,
@@ -413,9 +383,3 @@ export interface Annotation
   body?: AnnotationBody | AnnotationBody[];
   target?: AnnotationTarget | AnnotationTarget[];
 }
-
-export interface AnnotationNormalized
-  extends SomeRequired<OmitProperties<TechnicalProperties, AnnotationOmittedTechnical>, 'id' | 'type'>,
-    Partial<OmitProperties<DescriptiveNormalized, AnnotationOmittedDescriptive>>,
-    Partial<OmitProperties<LinkingNormalized, AnnotationOmittedLinking>>,
-    AnnotationW3cNormalised {}

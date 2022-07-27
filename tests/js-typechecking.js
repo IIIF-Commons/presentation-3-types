@@ -1,5 +1,5 @@
 /**
- * @typedef { import("../index.d").Manifest } Manifest
+ * @typedef { import("../dist/presentation-3").Manifest } Manifest
  */
 
 /**
@@ -15,6 +15,6 @@ function doSomethingWithManifest(manifest) {
 }
 
 /**
- * @type {import("../index.d").Manifest}
+ * @type {import("../dist/presentation-3").Manifest}
  */
 const manifest2 = {};

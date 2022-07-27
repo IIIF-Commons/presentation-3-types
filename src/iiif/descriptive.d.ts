@@ -1,7 +1,6 @@
-import { Reference } from '../reference';
-import { OmitProperties } from '../utility';
-import { Canvas, ContentResource } from '..';
-import { ResourceProvider, ResourceProviderNormalized } from '../resources/provider';
+import { ResourceProvider } from '../resources/provider';
+import { Canvas } from '../resources/canvas';
+import { ContentResource } from '../resources/contentResource';
 
 export declare type InternationalString = {
   [language: string]: string[] | undefined;
@@ -179,19 +178,4 @@ export declare type DescriptiveProperties = {
    * @deprecated since 3.0-beta - use placeholderCanvas or accompanyingCanvas
    */
   posterCanvas: Canvas;
-};
-
-export declare type DescriptiveNormalized = OmitProperties<
-  DescriptiveProperties,
-  'provider' | 'thumbnail' | 'accompanyingCanvas' | 'placeholderCanvas' | 'posterCanvas'
-> & {
-  thumbnail: Array<Reference<'ContentResource'>>;
-  placeholderCanvas: Reference<'Canvas'> | null;
-  accompanyingCanvas: Reference<'Canvas'> | null;
-  provider: Array<Reference<'Agent'>>;
-
-  /**
-   * @deprecated since 3.0-beta - use placeholderCanvas or accompanyingCanvas
-   */
-  posterCanvas: Reference<'Canvas'> | null;
 };
