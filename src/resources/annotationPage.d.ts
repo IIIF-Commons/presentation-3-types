@@ -16,12 +16,7 @@ type AnnotationPageOmittedTechnical =
   | 'viewingDirection'
   | 'timeMode'
   | 'motivation';
-type AnnotationPageOmittedDescriptive =
-  | 'posterCanvas'
-  | 'accompanyingCanvas'
-  | 'placeholderCanvas'
-  | 'navDate'
-  | 'language';
+type AnnotationPageOmittedDescriptive = 'accompanyingCanvas' | 'placeholderCanvas' | 'navDate' | 'language';
 type AnnotationPageOmittedLinking = 'services' | 'partOf' | 'start' | 'supplementary';
 type AnnotationPageOmittedStructural = 'annotations' | 'structures';
 

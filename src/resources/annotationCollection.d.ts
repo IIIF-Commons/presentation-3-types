@@ -16,12 +16,7 @@ type AnnotationCollectionOmittedTechnical =
   | 'viewingDirection'
   | 'timeMode'
   | 'motivation';
-type AnnotationCollectionOmittedDescriptive =
-  | 'posterCanvas'
-  | 'accompanyingCanvas'
-  | 'placeholderCanvas'
-  | 'navDate'
-  | 'language';
+type AnnotationCollectionOmittedDescriptive = 'accompanyingCanvas' | 'placeholderCanvas' | 'navDate' | 'language';
 type AnnotationCollectionOmittedLinking = 'services' | 'partOf' | 'start' | 'supplementary';
 
 type AnnotationCollectionTechnical = OmitProperties<TechnicalProperties, AnnotationCollectionOmittedTechnical>;

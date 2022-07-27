@@ -173,9 +173,4 @@ export declare type DescriptiveProperties = {
    *  * Clients _SHOULD_ ignore `accompanyingCanvas` on other types of resource.
    */
   accompanyingCanvas: Canvas;
-
-  /**
-   * @deprecated since 3.0-beta - use placeholderCanvas or accompanyingCanvas
-   */
-  posterCanvas: Canvas;
 };

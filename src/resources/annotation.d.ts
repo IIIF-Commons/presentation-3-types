@@ -12,13 +12,7 @@ type AnnotationOmittedTechnical =
   | 'duration'
   | 'viewingDirection'
   | 'motivation';
-type AnnotationOmittedDescriptive =
-  | 'posterCanvas'
-  | 'accompanyingCanvas'
-  | 'placeholderCanvas'
-  | 'navDate'
-  | 'language'
-  | 'rights';
+type AnnotationOmittedDescriptive = 'accompanyingCanvas' | 'placeholderCanvas' | 'navDate' | 'language' | 'rights';
 type AnnotationOmittedLinking = 'services' | 'start' | 'supplementary';
 
 type AnnotationTechnical = OmitProperties<TechnicalProperties, AnnotationOmittedTechnical>;
