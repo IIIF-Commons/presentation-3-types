@@ -25,7 +25,7 @@ export interface Range
     Partial<RangeStructural>,
     Partial<RangeLinking> {}
 
-export type NormalisedRangeItems = Array<Reference<'Range'> | Reference<'Canvas'> | SpecificResource<Reference<'Canvas'>>>;
+export type NormalisedRangeItems = Reference<'Range'> | Reference<'Canvas'> | SpecificResource<Reference<'Canvas'>>;
 
 export declare type RangeNormalized = OmitProperties<TechnicalProperties, RangeOmittedTechnical> &
   OmitProperties<StructuralProperties<NormalisedRangeItems>, RangeOmittedStructural> &
