@@ -2,9 +2,9 @@ name: Yarn build + test
 
 on:
   push:
-    branches: [ main ]
+    branches: [ v1.x ]
   pull_request:
-    branches: [ main ]
+    branches: [ v1.x ]
 
 jobs:
   build:
