@@ -4,6 +4,7 @@ export * from './resources/annotationPage';
 export * from './resources/canvas';
 export * from './resources/collection';
 export * from './resources/contentResource';
+export * from './resources/provider';
 export * from './resources/manifest';
 export * from './resources/range';
 export * from './resources/service';
