@@ -2,7 +2,7 @@ name: Release NPM package
 
 on:
   push:
-    tags: ['v*']
+    tags: ['v1']
 
 jobs:
   build:
@@ -61,3 +61,5 @@ jobs:
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          tag: v1
+
