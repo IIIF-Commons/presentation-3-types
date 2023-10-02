@@ -12,7 +12,6 @@ export type JsonLDContext = {
 
 export type IdOrAtId<T> = { id: T } | { '@id': T };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Nothing {}
 type Union<T, U> = T | (U & Nothing);
 
