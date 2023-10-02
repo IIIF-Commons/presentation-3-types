@@ -1,18 +1,17 @@
 import { EmbeddedResource, ExternalResourceTypes, ExternalWebResource, SpecificResource } from './annotation';
 import { Service } from './service';
+import { Prettify } from '../utility';
 
-export declare type IIIFExternalWebResource = ExternalWebResource & {
-  type: ExternalResourceTypes | string;
-  height?: number;
-  width?: number;
-  service?: Service[];
-  duration?: number;
-};
+export type IIIFExternalWebResource = Prettify<
+  ExternalWebResource & {
+    type: ExternalResourceTypes | string;
+    height?: number;
+    width?: number;
+    service?: Service[];
+    duration?: number;
+  }
+>;
 
-export declare type ContentResourceString = string;
+export type ContentResourceString = string;
 
-export declare type ContentResource =
-  | EmbeddedResource
-  | ExternalWebResource
-  | SpecificResource
-  | IIIFExternalWebResource;
+export type ContentResource = EmbeddedResource | ExternalWebResource | SpecificResource | IIIFExternalWebResource;

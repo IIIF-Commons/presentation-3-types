@@ -1,50 +1,64 @@
-import { IdOrAtId } from '../utility';
+import { IdOrAtId, Prettify } from '../utility';
 
-export declare type AuthAccessTokenService = IdOrAtId<string> & {
-  profile: 'http://iiif.io/api/auth/1/token' | 'AuthTokenService1';
-};
+export type AuthAccessTokenService = Prettify<
+  IdOrAtId<string> & {
+    profile: 'http://iiif.io/api/auth/1/token' | 'AuthTokenService1';
+  }
+>;
 
-export declare type AuthAccessTokenServiceResponse = {
+export type AuthAccessTokenServiceResponse = {
   accessToken: string;
   expiresIn?: number;
 };
 
-export declare type AuthAccessTokenServiceError = {
+export type AuthAccessTokenServiceError = {
   error: 'invalidRequest' | 'missingCredentials' | 'invalidCredentials' | 'invalidOrigin' | 'unavailable';
   description?: string;
 };
 
-type AuthAbstractService = IdOrAtId<string> & {
-  label: string;
-  confirmLabel?: string;
-  header?: string;
-  description?: string;
-  failureHeader?: string;
-  failureDescription?: string;
-};
+type AuthAbstractService = Prettify<
+  IdOrAtId<string> & {
+    label: string;
+    confirmLabel?: string;
+    header?: string;
+    description?: string;
+    failureHeader?: string;
+    failureDescription?: string;
+  }
+>;
 
-export declare type AuthClickThroughService = IdOrAtId<string> & {
-  profile: 'http://iiif.io/api/auth/1/clickthrough';
-  service: AuthAccessTokenService;
-};
+export type AuthClickThroughService = Prettify<
+  IdOrAtId<string> & {
+    profile: 'http://iiif.io/api/auth/1/clickthrough';
+    service: AuthAccessTokenService;
+  }
+>;
 
-export declare type AuthLogoutService = AuthAbstractService & {
-  profile: 'http://iiif.io/api/auth/1/logout' | 'AuthLogoutService1';
-};
+export type AuthLogoutService = Prettify<
+  AuthAbstractService & {
+    profile: 'http://iiif.io/api/auth/1/logout' | 'AuthLogoutService1';
+  }
+>;
 
-export declare type AuthLoginService = AuthAbstractService & {
-  profile: 'http://iiif.io/api/auth/1/login' | 'AuthCookieService1';
-  service: Array<AuthLoginService | AuthLogoutService>;
-};
+export type AuthLoginService = Prettify<
+  AuthAbstractService & {
+    profile: 'http://iiif.io/api/auth/1/login' | 'AuthCookieService1';
+    service: Array<AuthLoginService | AuthLogoutService>;
+  }
+>;
 
-export declare type AuthKioskService = AuthAbstractService & {
-  profile: 'http://iiif.io/api/auth/1/kiosk';
-  service: AuthAccessTokenService;
-};
+export type AuthKioskService = Prettify<
+  AuthAbstractService & {
+    profile: 'http://iiif.io/api/auth/1/kiosk';
+    service: AuthAccessTokenService;
+  }
+>;
 
-export declare type AuthExternalService = AuthAbstractService & {
-  profile: 'http://iiif.io/api/auth/1/external';
-  service: AuthAccessTokenService;
-};
+export type AuthExternalService = Prettify<
+  AuthAbstractService & {
+    profile: 'http://iiif.io/api/auth/1/external';
+    service: AuthAccessTokenService;
+  }
+>;
 
-export declare type AuthService = AuthLoginService | AuthClickThroughService | AuthKioskService | AuthExternalService;
+export type AuthService = AuthLoginService | AuthClickThroughService | AuthKioskService | AuthExternalService;

@@ -1,7 +1,7 @@
 import { InternationalString } from '../iiif/descriptive';
 import { ContentResource } from './contentResource';
 
-export declare type ResourceProvider = {
+export type ResourceProvider = {
   id: string;
   type: 'Agent';
   label: InternationalString;

@@ -1,12 +1,13 @@
 {
   "name": "@iiif/presentation-3",
   "description": "IIIF Presentation v3.0 typescript types",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "source": "index.js",
   "types": "dist/presentation-3.d.ts",
   "author": "Stephen Fraser <stephen.fraser@digirati.com>",
   "license": "MIT",
   "scripts": {
+    "test": "tsd ./tests",
     "build": "rm -rf dist/ && dts-bundle-generator  --external-imports=@types/geojson --out-file=dist/presentation-3.d.ts index.d.ts",
     "prepublishOnly": "rm -rf dist/ && dts-bundle-generator  --external-imports=@types/geojson --out-file=dist/presentation-3.d.ts index.d.ts"
   },
@@ -27,6 +28,7 @@
     "eslint": "^8.20.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
+    "tsd": "^0.29.0",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4"
   }

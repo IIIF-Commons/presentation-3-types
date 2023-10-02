@@ -1,6 +1,6 @@
 import { LiteralUnion } from '../utility';
 
-export declare type ResourceType =
+export type ResourceType =
   | 'Collection'
   | 'Manifest'
   | 'Canvas'
@@ -13,9 +13,9 @@ export declare type ResourceType =
   | 'CanvasReference'
   | 'Service';
 
-export declare type ViewingDirection = 'left-to-right' | 'right-to-left' | 'top-to-bottom' | 'bottom-to-top';
+export type ViewingDirection = 'left-to-right' | 'right-to-left' | 'top-to-bottom' | 'bottom-to-top';
 
-export declare type SpecificationBehaviors =
+export type SpecificationBehaviors =
   | 'auto-advance'
   | 'continuous'
   | 'facing-pages'
@@ -33,9 +33,9 @@ export declare type SpecificationBehaviors =
   | 'together'
   | 'unordered';
 
-export declare type SpecificationTimeMode = 'trim' | 'scale' | 'loop';
+export type SpecificationTimeMode = 'trim' | 'scale' | 'loop';
 
-export declare type TechnicalProperties = {
+export type TechnicalProperties = {
   /**
    * The URI that identifies the resource. If the resource is only available embedded  within another resource (see the [terminology section][prezi30-terminology] for an explanation of "embedded"), such as a Range within a Manifest, then the URI _MAY_ be the URI of the embedding resource with a unique fragment on the end. This is not true for Canvases, which _MUST_ have their own URI without a fragment.
    *

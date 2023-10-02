@@ -1,39 +1,45 @@
-import { IdOrAtId } from '../utility';
+import { IdOrAtId, Prettify } from '../utility';
 
-export declare type SearchService = IdOrAtId<string> & {
+export type SearchService = IdOrAtId<string> & {
   '@context': 'http://iiif.io/api/search/1/context.json';
   profile: 'http://iiif.io/api/search/1/search' | 'SearchService1';
 };
 
-export declare type SearchServiceQueryParams = {
+export type SearchServiceQueryParams = {
   q?: string;
   motivation?: string;
   date?: string;
   user?: string;
 };
 
-export declare type SearchServiceAutocomplete = IdOrAtId<string> & {
-  profile: 'http://iiif.io/api/search/1/autocomplete' | 'AutoCompleteService1';
-};
+export type SearchServiceAutocomplete = Prettify<
+  IdOrAtId<string> & {
+    profile: 'http://iiif.io/api/search/1/autocomplete' | 'AutoCompleteService1';
+  }
+>;
 
-export declare type SearchServiceAutocompleteQueryParams = SearchServiceQueryParams & {
-  q: string;
-  min?: number;
-};
+export type SearchServiceAutocompleteQueryParams = Prettify<
+  SearchServiceQueryParams & {
+    q: string;
+    min?: number;
+  }
+>;
 
-export declare type SearchServiceAutocompleteResponse = IdOrAtId<string> & {
-  '@context': 'http://iiif.io/api/search/1/context.json';
-  '@type': 'search:TermList';
-  ignored: string[];
-  terms: Array<{
-    match: string;
-    url: string;
-    count?: number;
-    label?: string;
-  }>;
-};
+export type SearchServiceAutocompleteResponse = Prettify<
+  IdOrAtId<string> & {
+    '@context': 'http://iiif.io/api/search/1/context.json';
+    '@type': 'search:TermList';
+    ignored: string[];
+    terms: Array<{
+      match: string;
+      url: string;
+      count?: number;
+      label?: string;
+    }>;
+  }
+>;
 
-export declare type SearchServiceSearchResponse = {
+export type SearchServiceSearchResponse = {
   '@context': 'http://iiif.io/api/presentation/3/context.json' | string[];
   '@id': string;
   '@type': 'sc:AnnotationList';
@@ -53,21 +59,21 @@ export declare type SearchServiceSearchResponse = {
     }>;
   }>;
 };
-export declare type SearchServiceCommonHitSelectors = {
+export type SearchServiceCommonHitSelectors = {
   '@type': 'oa:TextQuoteSelector';
   exact: string;
   prefix?: string;
   suffix?: string;
 };
 
-export declare type SearchServiceSearchCommonSelectors =
+export type SearchServiceSearchCommonSelectors =
   | string
   | {
       '@id': string;
       within: { '@id': string; type: string; label: string };
     };
 
-export declare type SearchServiceCommonResources = {
+export type SearchServiceCommonResources = {
   '@type': 'cnt:ContentAsText';
   chars: string;
 };

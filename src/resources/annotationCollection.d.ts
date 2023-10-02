@@ -1,5 +1,5 @@
 import { W3CAnnotationPage } from './annotationPage';
-import { OmitProperties, SomeRequired } from '../utility';
+import { OmitProperties, Prettify, SomeRequired } from '../utility';
 import { TechnicalProperties } from '../iiif/technical';
 import { DescriptiveProperties } from '../iiif/descriptive';
 import { LinkingProperties } from '../iiif/linking';
@@ -19,11 +19,14 @@ type AnnotationCollectionOmittedTechnical =
 type AnnotationCollectionOmittedDescriptive = 'accompanyingCanvas' | 'placeholderCanvas' | 'navDate' | 'language';
 type AnnotationCollectionOmittedLinking = 'services' | 'partOf' | 'start' | 'supplementary';
 
-type AnnotationCollectionTechnical = OmitProperties<TechnicalProperties, AnnotationCollectionOmittedTechnical>;
-type AnnotationCollectionDescriptive = OmitProperties<DescriptiveProperties, AnnotationCollectionOmittedDescriptive>;
-type AnnotationCollectionLinking = OmitProperties<LinkingProperties, AnnotationCollectionOmittedLinking>;
+export type AnnotationCollectionTechnical = OmitProperties<TechnicalProperties, AnnotationCollectionOmittedTechnical>;
+export type AnnotationCollectionDescriptive = OmitProperties<
+  DescriptiveProperties,
+  AnnotationCollectionOmittedDescriptive
+>;
+export type AnnotationCollectionLinking = OmitProperties<LinkingProperties, AnnotationCollectionOmittedLinking>;
 
-export declare type W3CAnnotationCollection = {
+export type W3CAnnotationCollection = {
   '@context'?: string;
   id: string;
   type: 'AnnotationCollection';
@@ -33,10 +36,12 @@ export declare type W3CAnnotationCollection = {
   last?: string | OmitProperties<W3CAnnotationPage, 'partOf'>;
 };
 
-export interface AnnotationCollection
-  extends SomeRequired<AnnotationCollectionTechnical, 'id'>,
-    Partial<AnnotationCollectionDescriptive>,
-    Partial<AnnotationCollectionLinking>,
-    OmitProperties<W3CAnnotationCollection, 'label'> {
-  partOf: Array<Collection | Manifest | string>;
-}
+export type AnnotationCollection = Prettify<
+  SomeRequired<AnnotationCollectionTechnical, 'id'> &
+    Partial<AnnotationCollectionDescriptive> &
+    Partial<AnnotationCollectionLinking> &
+    OmitProperties<W3CAnnotationCollection, 'label'> & {
+      type: 'AnnotationCollection';
+      partOf: Array<Collection | Manifest | string>;
+    }
+>;

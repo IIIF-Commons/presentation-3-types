@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "declaration": true
+    "declaration": true,
+    "allowJs": true
   },
   "exclude": ["dist/presentation-3.d.ts"]
 }

@@ -60,4 +60,5 @@ jobs:
 
       - uses: JS-DevTools/npm-publish@v1
         with:
+          tag: v1
           token: ${{ secrets.NPM_TOKEN }}

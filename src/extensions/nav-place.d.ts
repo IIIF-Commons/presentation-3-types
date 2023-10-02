@@ -1,9 +1,11 @@
+import { Prettify } from '../utility';
+
 /**
  * Nav place
  *
  * See: https://iiif.io/api/extension/navplace/
  */
-export declare interface NavPlaceExtension {
+export interface NavPlaceExtension {
   /**
    * Nav place
    *
@@ -13,5 +15,5 @@ export declare interface NavPlaceExtension {
    *
    * See: https://iiif.io/api/extension/navplace/
    */
-  navPlace?: import('geojson').GeoJSON;
+  navPlace?: Prettify<import('geojson').GeoJSON>;
 }

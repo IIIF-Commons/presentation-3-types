@@ -2,20 +2,20 @@ import { ResourceProvider } from '../resources/provider';
 import { Canvas } from '../resources/canvas';
 import { ContentResource } from '../resources/contentResource';
 
-export declare type InternationalString = {
+export type InternationalString = {
   [language: string]: string[] | undefined;
 };
 
-export declare type MetadataItem = {
+export type MetadataItem = {
   label: InternationalString;
   value: InternationalString;
 };
 
-export declare type DescriptiveProperties = {
+export type DescriptiveProperties = {
   /**
    * Label
    *
-   *   - A human readable label, name or title. The label property is intended to be displayed as a short, textual surrogate for the resource if a human needs to make a distinction between it and similar resources, for example between objects, pages, or options for a choice of images to display. The label property can be fully internationalized, and each language can have multiple values. This pattern is described in more detail in the {@link InternationalString} section.
+   *   - A human-readable label, name or title. The label property is intended to be displayed as a short, textual surrogate for the resource if a human needs to make a distinction between it and similar resources, for example between objects, pages, or options for a choice of images to display. The label property can be fully internationalized, and each language can have multiple values. This pattern is described in more detail in the {@link InternationalString} section.
    *  The value of the property must be a JSON object, as described in the {@link InternationalString} section.
    *
    *   - A {@link Collection} must have the label property with at least one entry.
@@ -130,7 +130,45 @@ export declare type DescriptiveProperties = {
    *
    */
   language: string[];
+
+  /**
+   * A content resource, such as a small image or short audio clip, that represents the resource that has the thumbnail property. A resource may have multiple thumbnail resources that have the same or different type and format.
+   *
+   * The value must be an array of JSON objects, each of which must have the id and type properties, and should have the format property. Images and videos should have the width and height properties, and time-based media should have the duration property. It is recommended that a IIIF Image API service be available for images to enable manipulations such as resizing.
+   *
+   *   * A {@link Collection} should have the thumbnail property with at least one item.
+   *   * Clients should render thumbnail on a Collection.
+   *   * A {@link Manifest} should have the thumbnail property with at least one item.
+   *   * Clients should render thumbnail on a Manifest.
+   *   * A {@link Canvas} may have the thumbnail property with at least one item. A Canvas should have the thumbnail property if there are multiple resources that make up the view.
+   *   * Clients should render thumbnail on a Canvas.
+   *   * A {@link ContentResource} may have the thumbnail property with at least one item. Content resources should have the thumbnail property with at least one item if it is an option in a Choice of resources.
+   *   * Clients should render thumbnail on a content resource.
+   *   * Other types of resource may have the thumbnail property with at least one item.
+   *   * Clients may render thumbnail on other types of resource.
+   */
   thumbnail: ContentResource[];
+
+  /**
+   * An organization or person that contributed to providing the content of the resource. Clients can then display this information to the user to acknowledge the provider’s contributions. This differs from the requiredStatement property, in that the data is structured, allowing the client to do more than just present text but instead have richer information about the people and organizations to use in different interfaces.
+   *
+   * The organization or person is represented as an Agent resource.
+   *
+   *   * Agents must have the id property, and its value must be a string. The string must be a URI that identifies the agent.
+   *   * Agents must have the type property, and its value must be the string “Agent”.
+   *   * Agents must have the label property, and its value must be a JSON object as described in the languages section.
+   *   * Agents should have the homepage property, and its value must be an array of JSON objects as described in the homepage section.
+   *   * Agents should have the logo property, and its value must be an array of JSON objects as described in the logo section.
+   *   * Agents may have the seeAlso property, and its value must be an array of JSON object as described in the seeAlso section.
+   *   * The value must be an array of JSON objects, where each item in the array conforms to the structure of an Agent, as described above.
+   *
+   * A Collection should have the provider property with at least one item.
+   *   * Clients must render provider on a Collection.
+   *   * A Manifest should have the provider property with at least one item.
+   *   * Clients must render provider on a Manifest.
+   *   * Other types of resource may have the provider property with at least one item.
+   *   * Clients should render provider on other types of resource.
+   */
   provider: ResourceProvider[];
 
   /**

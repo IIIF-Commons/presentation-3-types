@@ -7,39 +7,39 @@
 /**
  * A page in a paginated document
  */
-export declare type PageGranularity = 'page';
+export type PageGranularity = 'page';
 
 /**
  * An arbitrary region of text
  */
-export declare type BlockGranularity = 'block';
+export type BlockGranularity = 'block';
 
 /**
  * A paragraph
  */
-export declare type ParagraphGranularity = 'paragraph';
+export type ParagraphGranularity = 'paragraph';
 
 /**
  * A topographic line
  */
-export declare type LineGranularity = 'line';
+export type LineGranularity = 'line';
 
 /**
  * A single word
  */
-export declare type WordGranularity = 'word';
+export type WordGranularity = 'word';
 
 /**
  * A single glyph or symbol
  */
-export declare type GlyphGranularity = 'glyph';
+export type GlyphGranularity = 'glyph';
 
 /**
  * The textGranularity property identifies the Text Granularity Level of a resource. The value must be a single string.
  * This extension defines the Text Granularity Levels found in the table below. The string should be one of those
  * defined in the table below or in the [Registry of Extensions](https://iiif.io/api/extension/).
  */
-export declare type TextGranularityOptions =
+export type TextGranularityOptions =
   | PageGranularity
   | BlockGranularity
   | ParagraphGranularity
@@ -47,7 +47,7 @@ export declare type TextGranularityOptions =
   | WordGranularity
   | GlyphGranularity;
 
-export declare interface TextGranularityExtension {
+export interface TextGranularityExtension {
   /**
    * Text granularity
    *

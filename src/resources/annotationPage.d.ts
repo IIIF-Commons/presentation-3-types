@@ -1,5 +1,5 @@
 import { AnnotationCollection, W3CAnnotationCollection } from './annotationCollection';
-import { OmitProperties, SomeRequired } from '../utility';
+import { OmitProperties, Prettify, SomeRequired } from '../utility';
 import { Annotation } from './annotation';
 import { TechnicalProperties } from '../iiif/technical';
 import { DescriptiveProperties } from '../iiif/descriptive';
@@ -25,7 +25,7 @@ type AnnotationPageDescriptive = OmitProperties<DescriptiveProperties, Annotatio
 type AnnotationPageLinking = OmitProperties<LinkingProperties, AnnotationPageOmittedLinking>;
 type AnnotationPageStructural = OmitProperties<StructuralProperties<Annotation>, AnnotationPageOmittedStructural>;
 
-export declare type W3CAnnotationPage = {
+export type W3CAnnotationPage = {
   '@context'?: string;
   type: 'AnnotationPage';
   partOf?: SomeRequired<W3CAnnotationCollection, 'id'> | string;
@@ -35,11 +35,13 @@ export declare type W3CAnnotationPage = {
   startIndex?: number;
 };
 
-export interface AnnotationPage
-  extends SomeRequired<AnnotationPageTechnical, 'id'>,
-    Partial<AnnotationPageDescriptive>,
-    Partial<AnnotationPageLinking>,
-    Partial<AnnotationPageStructural>,
-    SomeRequired<OmitProperties<W3CAnnotationPage, 'partOf' | 'items'>, 'type'> {
-  partOf?: Array<SomeRequired<AnnotationCollection, 'id'>>;
-}
+export type AnnotationPage = Prettify<
+  SomeRequired<AnnotationPageTechnical, 'id'> &
+    Partial<AnnotationPageDescriptive> &
+    Partial<AnnotationPageLinking> &
+    Partial<AnnotationPageStructural> &
+    SomeRequired<OmitProperties<W3CAnnotationPage, 'partOf' | 'items'>, 'type'> & {
+      type: 'AnnotationPage';
+      partOf?: Array<Prettify<SomeRequired<AnnotationCollection, 'id'>>>;
+    }
+>;
