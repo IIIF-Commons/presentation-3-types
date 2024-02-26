@@ -1445,9 +1445,9 @@ trim-newlines@^3.0.0:
   integrity sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==
 
 tsd@^0.30.0:
-  version "0.30.5"
-  resolved "https://registry.yarnpkg.com/tsd/-/tsd-0.30.5.tgz#a3734d82186da9663ee6d6701f16dcfb82d0af18"
-  integrity sha512-HV/gRtw7TrQ8dfDoqcUIOaU1kGoVPx7gMSPJ9ECaf2tjKKtAAskQMl9HGUNa1Lc9BppslENykd0YhfXdjES6rg==
+  version "0.30.7"
+  resolved "https://registry.yarnpkg.com/tsd/-/tsd-0.30.7.tgz#319a0403073df6d3f572c4089378901662554ae5"
+  integrity sha512-oTiJ28D6B/KXoU3ww/Eji+xqHJojiuPVMwA12g4KYX1O72N93Nb6P3P3h2OAhhf92Xl8NIhb/xFmBZd5zw/xUw==
   dependencies:
     "@tsd/typescript" "~5.3.3"
     eslint-formatter-pretty "^4.1.0"
