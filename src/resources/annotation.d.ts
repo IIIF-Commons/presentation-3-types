@@ -33,7 +33,9 @@ export type W3CMotivation =
   | 'moderating'
   | 'questioning'
   | 'replying'
-  | 'tagging';
+  | 'tagging'
+  // Search2
+  | 'contextualizing';
 
 export type AnyMotivation = LiteralUnion<W3CMotivation>;
 

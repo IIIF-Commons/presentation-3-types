@@ -1,3 +1,5 @@
+// Based on: https://iiif.io/api/discovery/1.0/
+
 import { InternationalString } from './iiif/descriptive';
 import { Manifest } from './resources/manifest';
 import { Prettify } from './utility';
