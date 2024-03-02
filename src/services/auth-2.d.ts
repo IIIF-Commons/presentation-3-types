@@ -23,6 +23,12 @@ export type AuthAccessService2 = AuthAccessService2_Active | AuthAccessService2_
 interface AuthAccessService2_Common {
   id: string;
   type: 'AuthAccessService2';
+
+  // This wasn't clear in the spec. It looked like only `active` was allow to have a logout service.
+  service:
+    | [AuthAccessTokenService2]
+    | [AuthAccessTokenService2, AuthLogoutService2]
+    | [AuthLogoutService2, AuthAccessTokenService2];
 }
 
 /**
@@ -47,10 +53,12 @@ export interface AuthAccessService2_Active extends AuthAccessService2_Common {
   note?: InternationalString;
   /** The label for the user interface element that opens the access service. */
   confirmLabel?: InternationalString;
-  service:
-    | [AuthAccessTokenService2]
-    | [AuthAccessTokenService2, AuthLogoutService2]
-    | [AuthLogoutService2, AuthAccessTokenService2];
+
+  // See note above.
+  // service:
+  //   | [AuthAccessTokenService2]
+  //   | [AuthAccessTokenService2, AuthLogoutService2]
+  //   | [AuthLogoutService2, AuthAccessTokenService2];
 }
 
 /**
@@ -70,14 +78,20 @@ export interface AuthAccessService2_Active extends AuthAccessService2_Common {
  */
 export interface AuthAccessService2_Kiosk extends AuthAccessService2_Common {
   profile: 'kiosk';
-  service: [AuthAccessTokenService2];
+  // See note above.
+  // service: [AuthAccessTokenService2];
+
+  // This isn't mentioned in the specification, but is in the demos.
+  label: InternationalString;
 }
 
 export interface AuthAccessService2_External extends AuthAccessService2_Common {
   profile: 'external';
   /** The name of the access service */
   label: InternationalString;
-  service: [AuthAccessTokenService2];
+
+  // See note above.
+  // service: [AuthAccessTokenService2];
 }
 
 export interface AuthAccessTokenService2 {
