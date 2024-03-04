@@ -1,4 +1,5 @@
 import { Manifest } from '../src/resources/manifest';
+import { AuthProbeService2 } from '../src/services/auth-2';
 import { ImageService, ImageService3 } from '../src/services/image-service';
 
 const cookbook1: Manifest = {
@@ -199,4 +200,318 @@ const imageService2: ImageService3 = {
   ],
   type: 'ImageService3',
   width: 3497,
+};
+
+const auth2_1: AuthProbeService2 = {
+  id: 'https://iiif-auth2-server.herokuapp.com/probe/01_Icarus_Breughel.jpg',
+  type: 'AuthProbeService2',
+  service: [
+    {
+      id: 'https://iiif-auth2-server.herokuapp.com/auth/access/active-login/01_Icarus_Breughel.jpg',
+      type: 'AuthAccessService2',
+      profile: 'active',
+      service: [
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/token/active-login/01_Icarus_Breughel.jpg',
+          type: 'AuthAccessTokenService2',
+          errorHeading: {
+            en: ['Authentication Failed'],
+          },
+          errorNote: {
+            en: ['<a href="http://example.org/policy">Access Policy</a>'],
+          },
+        },
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/logout/active-login/01_Icarus_Breughel.jpg',
+          type: 'AuthLogoutService2',
+          label: {
+            en: ['Log out'],
+          },
+        },
+      ],
+      label: {
+        en: ['Login to Example Institution'],
+      },
+      heading: {
+        en: ['Please Log In'],
+      },
+      note: {
+        en: ['Example Institution requires that you log in with your example account to view this content.'],
+      },
+      confirmLabel: {
+        en: ['Login'],
+      },
+    },
+  ],
+};
+
+const auth2_2: AuthProbeService2 = {
+  id: 'https://iiif-auth2-server.herokuapp.com/probe/02_gauguin.jpg',
+  type: 'AuthProbeService2',
+  service: [
+    {
+      id: 'https://iiif-auth2-server.herokuapp.com/auth/access/active-login/02_gauguin.jpg',
+      type: 'AuthAccessService2',
+      profile: 'active',
+      service: [
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/token/active-login/02_gauguin.jpg',
+          type: 'AuthAccessTokenService2',
+          errorHeading: {
+            en: ['Viewing greyscale version'],
+          },
+          errorNote: {
+            en: [
+              'You don\'t appear to have access to the full colour version. <a href="http://example.org/policy">Access Policy</a>',
+            ],
+          },
+        },
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/logout/active-login/02_gauguin.jpg',
+          type: 'AuthLogoutService2',
+          label: {
+            en: ['Log out'],
+          },
+        },
+      ],
+      label: {
+        en: ['Login to Example Institution for full quality'],
+      },
+      heading: {
+        en: ['Please Log In'],
+      },
+      note: {
+        en: [
+          'Example Institution requires that you log in with your example account to view the full-quality content.',
+        ],
+      },
+      confirmLabel: {
+        en: ['Login'],
+      },
+    },
+  ],
+};
+
+const auth2_3_clickthrough: AuthProbeService2 = {
+  id: 'https://iiif-auth2-server.herokuapp.com/probe/03_clickthrough.jpg',
+  type: 'AuthProbeService2',
+  service: [
+    {
+      id: 'https://iiif-auth2-server.herokuapp.com/auth/access/active-clickthrough/03_clickthrough.jpg',
+      type: 'AuthAccessService2',
+      profile: 'active',
+      service: [
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/token/active-clickthrough/03_clickthrough.jpg',
+          type: 'AuthAccessTokenService2',
+          errorHeading: {
+            en: ['Terms of Use Not Accepted'],
+          },
+          errorNote: {
+            en: ['You must accept the terms of use to see the content.'],
+          },
+        },
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/logout/active-clickthrough/03_clickthrough.jpg',
+          type: 'AuthLogoutService2',
+          label: {
+            en: ['Log out'],
+          },
+        },
+      ],
+      label: {
+        en: ['Terms of Use for Example Institution'],
+      },
+      heading: {
+        en: ['Restricted Material with Terms of Use'],
+      },
+      note: {
+        en: ['<span>... terms of use ... </span>'],
+      },
+      confirmLabel: {
+        en: ['I Agree'],
+      },
+    },
+  ],
+};
+
+const auth2_4_kiosk: AuthProbeService2 = {
+  id: 'https://iiif-auth2-server.herokuapp.com/probe/04_gene_cernan.jpg',
+  type: 'AuthProbeService2',
+  service: [
+    {
+      id: 'https://iiif-auth2-server.herokuapp.com/auth/access/kiosk/04_gene_cernan.jpg',
+      type: 'AuthAccessService2',
+      profile: 'kiosk',
+      service: [
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/token/kiosk/04_gene_cernan.jpg',
+          type: 'AuthAccessTokenService2',
+          errorHeading: {
+            en: ['Ooops!'],
+          },
+          errorNote: {
+            en: ['Call Bob at ext. 1234 to reboot the cookie server'],
+          },
+        },
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/logout/kiosk/04_gene_cernan.jpg',
+          type: 'AuthLogoutService2' as const,
+          label: {
+            en: ['Log out'],
+          },
+        },
+      ],
+      label: {
+        en: ['Internal cookie granting service'],
+      },
+    },
+  ],
+};
+
+const auth2_5_external: AuthProbeService2 = {
+  id: 'https://iiif-auth2-server.herokuapp.com/probe/05_cader_idris.jpg',
+  type: 'AuthProbeService2',
+  service: [
+    {
+      id: 'https://iiif-auth2-server.herokuapp.com/auth/access/external/05_cader_idris.jpg',
+      type: 'AuthAccessService2',
+      profile: 'external',
+      service: [
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/token/external/05_cader_idris.jpg',
+          type: 'AuthAccessTokenService2',
+          errorHeading: {
+            en: ['Restricted Material'],
+          },
+          errorNote: {
+            en: ['This material is not viewable without prior agreement'],
+          },
+        },
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/logout/external/05_cader_idris.jpg',
+          type: 'AuthLogoutService2' as const,
+          label: {
+            en: ['Log out'],
+          },
+        },
+      ],
+      label: {
+        en: ['External Authentication Required'],
+      },
+    },
+  ],
+};
+
+const auth2_6_shared: AuthProbeService2 = {
+  id: 'https://iiif-auth2-server.herokuapp.com/probe/06_1959.jpg',
+  type: 'AuthProbeService2',
+  service: [
+    {
+      id: 'https://iiif-auth2-server.herokuapp.com/auth/access/active-login/shared',
+      type: 'AuthAccessService2',
+      profile: 'active',
+      service: [
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/token/active-login/shared',
+          type: 'AuthAccessTokenService2',
+          errorHeading: {
+            en: ['Authentication Failed'],
+          },
+          errorNote: {
+            en: ['<a href="http://example.org/policy">Access Policy</a>'],
+          },
+        },
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/logout/active-login/shared',
+          type: 'AuthLogoutService2',
+          label: {
+            en: ['Log out'],
+          },
+        },
+      ],
+      label: {
+        en: ['Login to Example Institution'],
+      },
+      heading: {
+        en: ['Please Log In'],
+      },
+      note: {
+        en: ['You can still use the service information to vary the strings presented to the user.'],
+      },
+      confirmLabel: {
+        en: ['Login'],
+      },
+    },
+  ],
+};
+
+const auth2_7_multiple: AuthProbeService2 = {
+  id: 'https://iiif-auth2-server.herokuapp.com/probe/08_portmeirion.jpg',
+  type: 'AuthProbeService2',
+  service: [
+    {
+      id: 'https://iiif-auth2-server.herokuapp.com/auth/access/active-clickthrough/08_portmeirion.jpg',
+      type: 'AuthAccessService2',
+      profile: 'active',
+      service: [
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/token/active-clickthrough/08_portmeirion.jpg',
+          type: 'AuthAccessTokenService2',
+          errorHeading: {
+            en: ['Terms of Use Not Accepted'],
+          },
+          errorNote: {
+            en: ['You must accept the terms of use to see the content.'],
+          },
+        },
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/logout/active-clickthrough/08_portmeirion.jpg',
+          type: 'AuthLogoutService2',
+          label: {
+            en: ['Log out'],
+          },
+        },
+      ],
+      label: {
+        en: ['Terms of Use for Example Institution'],
+      },
+      heading: {
+        en: ['Restricted Material with Terms of Use'],
+      },
+      note: {
+        en: ['<span>... terms of use ... </span>'],
+      },
+      confirmLabel: {
+        en: ['I Agree'],
+      },
+    },
+    {
+      id: 'https://iiif-auth2-server.herokuapp.com/auth/access/external/08_portmeirion.jpg',
+      type: 'AuthAccessService2',
+      profile: 'external',
+      service: [
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/token/external/08_portmeirion.jpg',
+          type: 'AuthAccessTokenService2',
+          errorHeading: {
+            en: ['Restricted Material'],
+          },
+          errorNote: {
+            en: ['This material is not viewable without prior agreement'],
+          },
+        },
+        {
+          id: 'https://iiif-auth2-server.herokuapp.com/auth/logout/external/08_portmeirion.jpg',
+          type: 'AuthLogoutService2',
+          label: {
+            en: ['Log out'],
+          },
+        },
+      ],
+      label: {
+        en: ['External Authentication Required'],
+      },
+    },
+  ],
 };
