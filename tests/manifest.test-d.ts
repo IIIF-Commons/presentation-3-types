@@ -1,4 +1,5 @@
 import { Manifest } from '../src/resources/manifest';
+import { Service } from '../src/resources/service';
 import { AuthProbeService2 } from '../src/services/auth-2';
 import { ImageService, ImageService3 } from '../src/services/image-service';
 
@@ -515,3 +516,8 @@ const auth2_7_multiple: AuthProbeService2 = {
     },
   ],
 };
+
+const test: Service = {} as any;
+if (test.profile) {
+  // shouldn't error.
+}
