@@ -127,6 +127,7 @@ export interface AuthAccessTokenError2 {
 export interface AuthProbeService2 {
   id: string;
   type: 'AuthProbeService2';
+  profile?: string; // For compatibility with other services
   service: AuthAccessService2[];
   errorHeading?: InternationalString;
   errorNote?: InternationalString;
