@@ -24,7 +24,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "@typescript-eslint/parser": "^5.31.0",
-    "dts-bundle-generator": "^6.12.0",
+    "dts-bundle-generator": "^9.3.1",
     "eslint": "^8.20.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^3.2.5",
