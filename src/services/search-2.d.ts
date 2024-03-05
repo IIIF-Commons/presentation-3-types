@@ -102,6 +102,7 @@ export interface AutoCompleteService2 {
 export interface Search2Service {
   id: string;
   type: 'SearchService2';
+  profile?: string; // For compatibility with other services
   label?: InternationalString;
   service?: [AutoCompleteService2];
 }
