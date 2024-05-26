@@ -49,14 +49,14 @@ export type SearchServiceSearchResponse = {
     motivation: string;
     resource: SearchServiceCommonResources | any; // this is broad.
     on: SearchServiceSearchCommonSelectors | any | Array<SearchServiceSearchCommonSelectors> | Array<any>;
-    hits?: Array<{
-      '@type': 'search:Hit';
-      annotations: string[];
-      selectors: Array<SearchServiceCommonHitSelectors>;
-      match?: string;
-      before?: string;
-      after?: string;
-    }>;
+  }>;
+  hits?: Array<{
+    '@type': 'search:Hit';
+    annotations: string[];
+    selectors: Array<SearchServiceCommonHitSelectors>;
+    match?: string;
+    before?: string;
+    after?: string;
   }>;
 };
 export type SearchServiceCommonHitSelectors = {
