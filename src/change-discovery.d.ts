@@ -24,6 +24,7 @@ export type ChangeDiscoveryActivity = Prettify<
     | {
         type: Exclude<ChangeDiscoveryActivityType, 'Move'>;
         object: ChangeDiscoveryBaseObject;
+        target: never;
       }
     | {
         type: 'Move';
