@@ -2,6 +2,7 @@ import { Manifest } from '../src/resources/manifest';
 import { Service } from '../src/resources/service';
 import { AuthProbeService2 } from '../src/services/auth-2';
 import { ImageService, ImageService3 } from '../src/services/image-service';
+import { ContentResource } from '../src/resources/contentResource';
 
 const cookbook1: Manifest = {
   '@context': 'http://iiif.io/api/presentation/3/context.json',
@@ -153,7 +154,7 @@ const cookbook5: Manifest = {
                     id: 'https://iiif.io/api/image/3.0/example/reference/918ecd18c2592080851777620de9bcb5-gottingen',
                     profile: 'level1',
                     type: 'ImageService3',
-                  } as ImageService,
+                  },
                 ],
               },
               target: 'https://iiif.io/api/cookbook/recipe/0005-image-service/canvas/p1',
@@ -161,6 +162,21 @@ const cookbook5: Manifest = {
           ],
         },
       ],
+    },
+  ],
+};
+
+const contentResourceWithService: ContentResource = {
+  id: 'https://iiif.io/api/image/3.0/example/reference/918ecd18c2592080851777620de9bcb5-gottingen/full/max/0/default.jpg',
+  type: 'Image',
+  format: 'image/jpeg',
+  height: 3024,
+  width: 4032,
+  service: [
+    {
+      id: 'https://iiif.io/api/image/3.0/example/reference/918ecd18c2592080851777620de9bcb5-gottingen',
+      profile: 'level1',
+      type: 'ImageService3',
     },
   ],
 };
@@ -357,7 +373,7 @@ const auth2_4_kiosk: AuthProbeService2 = {
         },
         {
           id: 'https://iiif-auth2-server.herokuapp.com/auth/logout/kiosk/04_gene_cernan.jpg',
-          type: 'AuthLogoutService2' as const,
+          type: 'AuthLogoutService2',
           label: {
             en: ['Log out'],
           },
@@ -391,7 +407,7 @@ const auth2_5_external: AuthProbeService2 = {
         },
         {
           id: 'https://iiif-auth2-server.herokuapp.com/auth/logout/external/05_cader_idris.jpg',
-          type: 'AuthLogoutService2' as const,
+          type: 'AuthLogoutService2',
           label: {
             en: ['Log out'],
           },
