@@ -48,7 +48,7 @@ export type Search2AnnotationPage = Prettify<
 >;
 
 export type Search2ContextualizingAnnotation = Prettify<
-  Annotation & {
+  Omit<Annotation, 'motivation' | 'target'> & {
     motivation: 'contextualizing';
     target: {
       type: 'SpecificResource';
